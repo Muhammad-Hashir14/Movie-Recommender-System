@@ -1,0 +1,110 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#pp{
+    color: #ffcc00;
+    font-style: italic;
+}
+button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #ffcc00;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#image-dropdown {
+    padding: 5px;
+}
+
+#show-image-button {
+    padding: 5px 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.recommended-movies {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-card p {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #image-dropdown {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #show-image-button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .recommended-movies {
+        flex-direction: column;
+    }
+
+    .movie-card {
+        width: 100%;
+    }
+}
+
+/* Media query for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    button, select {
+        font-size: 14px;
+    }
+
+    .movie-card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Recommender System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+
+</head>
+
+<body>
+    <h1>Movie Recommender System</h1>
+    <form method="POST" action="{{ url_for('home') }}">
+        <select id="image-dropdown" name="select">
+            <option value="unselect" selected>____Select movie to Recommend___</option>
+            {% for item in data %}
+            <option value="{{ item.title }}">{{ item.title }}</option>
+            {% endfor %}
+        </select>
+        <button id="show-image-button" type="submit" name='action' value='Recommend'>Recommend</button>
+    </form>
+    <br>
+    <p>Recommended Movies for </p>
+    <p id = "pp">{{ select }}</p>
+    <br>
+    {% if data1 %}
+    <div class="recommended-movies">
+        {% for i, j in data1 %}
+        <div class="movie-card">
+            <img src="{{ j }}" alt="poster">
+            <p>{{ i }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Recommender System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    
+    <h1>Movie Recommeder System</h1>
+   
+    <form method="POST" action="{{ url_for('home') }}">
+        <select id="image-dropdown" name="select">
+            <option value="unselect" selected>____Select movie to Recommend___</option>
+            {% for item in data %}
+            <option value="{{ item.title }}">{{ item.title }}</option>
+            {% endfor %}
+        </select>
+        <button id="show-image-button" type="submit" name='action' value='Recommend'>Recommend</button>
+    </form>
+    <h2>Recommended Movies</h2>
+
+    {% if data1 %}
+    <ol>
+        {% for i,j in data1 %}    
+
+        <li>{{ i }}</li>
+        <img src="{{ j }}" width=200 alt="poster">
+
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+  
+</body>
+
+</html> -->
